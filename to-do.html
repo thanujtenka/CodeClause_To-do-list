@@ -1,0 +1,176 @@
+<html>
+    <head>
+        <title>to-do-list</title> 
+     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins',sans-serif;
+            box-sizing: border-box;
+        } 
+        #container{ 
+            width: 100%;
+            min-height: 100vh;
+            background:linear-gradient(360deg,#1b695c,#177bcd);
+            padding: 10px;
+
+        } 
+        #to-doapp{
+            width: 100%;
+            max-width: 540px; 
+            background: #f3f1f1;
+            padding: 40px 30px 70px;
+            margin: 100px auto 20px ; 
+            border-radius: 10px; 
+            margin-left: 35%; 
+             margin-top: 10%; 
+             
+        } 
+        #to-doapp h1{ 
+            color: #002765;
+            align-items: center;
+            display: flex; 
+            margin-left: 30%;
+            margin-bottom: 20px;
+        } 
+        #to-doapp h1 img{ 
+            margin-top: 10px;
+            width:90px ;  
+            border-radius: 10px;
+            margin-left: 20px;
+            
+        } 
+        #row{
+            display: flex;
+            align-items: center; 
+            justify-content: space-between;
+            background: #eeeeeee2;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            padding-left: 20;
+            
+        } 
+        input{
+            flex: 1;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            padding: 10px;
+
+        } 
+        button{
+            border: none;
+            outline: none;
+            background: #db8910e3; 
+            padding: 16px 50px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 40px;
+        } 
+        ul li{
+            list-style: none;
+            font-size: 17px;
+            padding: 12px 8px 12px 50px; 
+            user-select: none;
+            position: relative;
+        }  
+        ul li::before{
+            content: '';
+            position: absolute;
+            height: 23px;
+            width: 23px;
+            border-radius: 50%;
+            background-image:url("unchecked.png");
+            background-size:cover ; 
+            background-position: center; 
+            top: 12px;
+            left:19px;
+
+        } 
+        ul li.checked{
+            color: #c62323;
+            text-decoration: dotted;
+        } 
+        ul li.checked::before{
+            background-image: url("checked.png");
+        } 
+        ul li span{
+            position: absolute;
+            right: 0;
+            top:5;
+            width:40px ;
+            height: 40px;
+            font-size: 22px;
+            color: #555;
+                line-height: 40px;
+                text-align: center; 
+                border-radius: 50%;
+        } 
+        ul li span:hover {
+            background: #edeef0;
+        }   
+        </style>  
+    </head>
+    <body >
+      <div id="container"> 
+        <div id="to-doapp">
+            <h1>to-do list 
+            <img src="images.jpg"/></h1>
+            <div id="row">
+            <input type="text" id="inputfield" placeholder="Add your text"/>
+            <button id="addbutton" onclick="add()">add</button> 
+
+            </div>
+            <ul id="list-container">
+               <!-- <li class="checked">task1</li>
+                <li>task2</li>
+                <li>task3</li> -->
+            </ul>
+        </div>
+      </div> 
+      <script>
+        const input=document.getElementById("inputfield");
+        
+        const innercontainer=document.getElementById("list-container"); 
+        function add()
+        {
+            if(input.value=='')
+            alert("compalsary add text");
+            else
+            {
+                        let li=document.createElement("li"); 
+                        li.innerHTML=input.value;
+                        innercontainer.appendChild(li); 
+                        let span=document.createElement("span");
+                        span.innerHTML="\u00d7";
+                        li.appendChild(span); 
+                        
+            } 
+            input.value=''; 
+            storedata();
+        } 
+        innercontainer.addEventListener("click",function(e){
+            if(e.target.tagName==="LI"){
+               e.target.classList.toggle("checked"); 
+               storedata();
+            }
+            else if(e.target.tagName==="SPAN") 
+            {
+                e.target.parentElement.remove(); 
+                storedata();
+            }
+        },false); 
+        function storedata()
+        {
+            localStorage.setItem("data",innercontainer.innerHTML);
+        } 
+        function display()
+        {
+            innercontainer.innerHTML= localStorage.getItem("data");
+            
+        } 
+        display();
+      </script>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+<html>
+    <head>
+       <title>loginpage</title>
+       <style> 
+               *{
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins',sans-serif;
+            box-sizing: border-box;
+        } 
+        #l1{
+            width: 100%;
+            min-height: 100vh;
+            background:linear-gradient(360deg,#1b695c,#177bcd);
+            padding: 10px;
+
+        } 
+        #login{
+            width: 100%;
+            max-width: 540px; 
+            background: #f3f1f1;
+            padding: 40px 30px 70px;
+            margin: 100px auto 20px ; 
+            border-radius: 10px; 
+            margin-left: 35%; 
+             margin-top: 10%; 
+           
+        }  
+        h1{
+            color: #002765;
+            align-items: center;
+            display: flex; 
+            margin-left: 30%;
+            margin-bottom: 50;  
+            text-align: center; 
+            text-decoration:underline;
+        }
+        input{ 
+            
+            flex: 1;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            padding: 10px;
+            padding-left:40px ;  
+            padding-right: 40px ;
+            display: flex;
+            align-items: center; 
+            justify-content: space-between;
+            background: #d88b4be2;
+            border-radius: 30px;
+            margin-bottom: 5px;
+            text-align: center; 
+            border-left: 50px; 
+            align-items: center;
+        } 
+        #form{
+            align-items: center; 
+            margin-top: 30px; 
+            margin-left: 120px;
+        } 
+        button{
+            position: relative;
+        display: inline-block;
+        padding: 10px 20px; 
+        color: #151616;
+        font-size: 16px;
+        text-decoration: none; 
+        text-transform: uppercase; 
+        overflow: hidden; 
+        transition: .5s;
+        margin-top: 10px; 
+        margin-left: 40px;
+        letter-spacing: 4px;
+        }
+       </style>
+    </head> 
+<body>
+    <div id="l1">
+        <div id="login">   
+            <h1>loginpage</h1> 
+            <div id="form">
+            <from id="row">
+            <input type="text" placeholder="username"/><br>
+            <input type="text" placeholder="mobile no"/><br>
+            <input type="password" placeholder="password"/><br>
+            <button type="submit" onclick="fun()">submit</button>
+            </from> 
+            </div>
+        </div>
+
+    </div> 
+    <script>
+       function fun(){
+        form.reset();
+       }
+    </script>
+</body>
+
+</html>

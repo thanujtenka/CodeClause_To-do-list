@@ -1,0 +1,47 @@
+<html>
+<head>
+<style>
+    .login-box .user-box input:focus ~ label,.login-box .user-box input:valid ~ label{
+        top:-20px;
+        left:0;
+        color:#03e9f4;
+        font-size: 12px;
+    } 
+    .login-box form a{
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px; 
+        color: #03e9f4;
+        font-size: 16px;
+        text-decoration: none; 
+        text-transform: uppercase; 
+        overflow: hidden; 
+        transition: .5s;
+        margin-top: 40px;
+        letter-spacing: 4px;
+    }
+</style>
+</head> 
+<body> 
+    <h2>login form</h2> 
+    <form>
+    <div class="login-box">
+        <input type="text" name=""  required="" >
+        <label>username</label>
+        </div>
+        <div class="user-box"> 
+            <input type="password" name="" required="">
+            <label>password</label>
+
+        </div> 
+        <a href="#">
+            <span></span> 
+            <span></span>
+            <span></span>
+            <span></span>
+            submit
+        </a>
+    </form>
+    </div>
+</body>
+</html>
